@@ -3,7 +3,9 @@ return{
   opts = {
     picker = {},
     explorer = {},
-    indent = {}
+    indent = {},
+    lazygit = {},
+    terminal = {}
   },
   keys = {
     -- Top Pickers & Explorer
@@ -30,5 +32,7 @@ return{
     { "gr", function() Snacks.picker.lsp_references() end, nowait = true, desc = "References" },
     { "gI", function() Snacks.picker.lsp_implementations() end, desc = "Goto Implementation" },
     { "gy", function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
+    -- Terminal
+    {"<F12>", function() Snacks.terminal.toggle() end, desc = "toggle terminal"},
   },
 }
