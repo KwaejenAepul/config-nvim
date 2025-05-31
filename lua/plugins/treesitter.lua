@@ -6,7 +6,7 @@ return {
 
         configs.setup({
             ensure_installed = {
-                "c", "lua", "vim",  "vimdoc", "query", "elixir", "heex", "javascript", "html", "markdown", "markdown_inline", "python", "rust", "lua", "json", "toml"
+                "c", "lua","query", "heex", "javascript", "html", "markdown", "markdown_inline", "python", "rust","json", "toml", "gdscript","godot_resource","gdshader"
             },
             auto_install = true,
             sync_install = false,
