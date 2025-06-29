@@ -1,6 +1,9 @@
 vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", {desc="Open Parent Directory in Oil"})
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- todo keymaps
+vim.keymap.set("n","<leader>td", ":TodoQuickFix<CR>", {desc="Open todos quickfix list"})
+vim.keymap.set("n","<leader>tl", ":TodoLocList<CR>", {desc="Open todos location list"})
 --easier window focus
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
