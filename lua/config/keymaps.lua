@@ -1,5 +1,5 @@
 vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", {desc="Open Parent Directory in Oil"})
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<C-space>', '<C-\\><C-n><C-w>h',{silent = true}, { desc = 'Exit terminal mode' })
 
 -- todo keymaps
 vim.keymap.set("n","<leader>td", ":TodoQuickFix<CR>", {desc="Open todos quickfix list"})
