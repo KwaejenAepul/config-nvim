@@ -9,9 +9,9 @@ return {
                 "c", "lua","query", "heex", "javascript", "html", "markdown", "markdown_inline", "python", "rust","json", "toml", "gdscript","godot_resource","gdshader"
             },
             auto_install = true,
-            sync_install = false,
+            sync_install = true,
             highlight = { enable = true },
-            indent = { enable = true },  
+            indent = { enable = true },
 
             incremental_selection = {
                 enable = true,
