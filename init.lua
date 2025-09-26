@@ -1,6 +1,5 @@
 require("config.lazy")
 vim.o.background = "dark"
-vim.cmd([[colorscheme doom-one]])
 
 vim.api.nvim_create_autocmd("VimEnter",{callback=function()require"lazy".update({show = false})end})
 
