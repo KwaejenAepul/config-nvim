@@ -10,6 +10,6 @@
 --  end
 --}
 return {
-  "shaunsingh/nord.nvim",
+  'NTBBloodbath/doom-one.nvim',
   priority = 1000,
 }
