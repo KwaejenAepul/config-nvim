@@ -7,3 +7,8 @@ if gdproject then
     io.close(gdproject)
     vim.fn.serverstart './godothost'
 end
+
+if vim.g.neovide then
+   vim.o.guifont = "SauceCodePro Nerd Font Mono:h12"
+end
+

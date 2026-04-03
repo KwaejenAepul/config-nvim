@@ -1,4 +1,4 @@
-vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", {desc="Open Parent Directory in Oil"})
+vim.keymap.set("n", "-", "<cmd>Oil<CR>", {desc="Open Parent Directory in Oil"})
 vim.keymap.set('t', '<C-space>', '<C-\\><C-n><C-w>h',{silent = true}, { desc = 'Exit terminal mode' })
 
 -- todo keymaps
@@ -13,11 +13,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- snack keybinds
 vim.keymap.set("n", "<leader>fb", function() Snacks.picker.buffers() end, {desc = "Buffers"})
 vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files() end, {desc = "Find Files"})
-vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, {desc = "Find Git Files"})
+vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, {desc = "Grep"})
 vim.keymap.set("n", "<leader>fp", function() Snacks.picker.projects() end, {desc = "Projects"})
 vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end, {desc = "Recent"})
 vim.keymap.set("n", "<leader>sb", function() Snacks.picker.grep_buffers() end, {desc = "Grep Open Buffers"})
-vim.keymap.set("n", "<leader>sg", function() Snacks.picker.git_files() end, {desc = "Grep"})
+vim.keymap.set("n", "<leader>sg", function() Snacks.picker.git_files() end, {desc = "git grep"})
 -- LSP
 vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, {desc = "Goto Definition"})
 vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, {desc = "Goto Declaration"})
@@ -25,6 +25,8 @@ vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, {desc =
 vim.keymap.set("n", "gI", function() Snacks.picker.lsp_implementations() end, {desc = "Goto Implementation"})
 vim.keymap.set("n", "gy", function() Snacks.picker.lsp_type_definitions() end, {desc = "Goto T[y]pe Definition"})
 vim.keymap.set("n","<leader>cr", vim.lsp.buf.rename, {desc ='[R]e[n]ame'})
+--  other snack bindings
+vim.keymap.set("n", "<leader>sm", function() Snacks.picker.man() end, {desc = "man pages"})
 -- Terminal
 vim.keymap.set("n","<F12>", function() Snacks.terminal.toggle() end, {desc = "toggle terminal"})
 

@@ -128,21 +128,22 @@ return {
             [vim.diagnostic.severity.HINT] = '󰌶 ',
           },
         },
-        virtual_text = {
-          source = 'if_many',
-          spacing = 2,
-          format = function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
-          end,
-        },
+        virtual_text = false--{
+       --   source = 'if_many',
+       --   spacing = 2,
+       --   format = function(diagnostic)
+       --     local diagnostic_message = {
+       --       [vim.diagnostic.severity.ERROR] = diagnostic.message,
+       --       [vim.diagnostic.severity.WARN] = diagnostic.message,
+       --       [vim.diagnostic.severity.INFO] = diagnostic.message,
+       --       [vim.diagnostic.severity.HINT] = diagnostic.message,
+       --     }
+       --     return diagnostic_message[diagnostic.severity]
+       --   end,
+       -- },
       }
-
+      vim.o.updatetime = 200
+      vim.cmd  [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
       --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
