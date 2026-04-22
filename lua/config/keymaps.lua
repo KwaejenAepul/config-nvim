@@ -13,7 +13,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- snack keybinds
 vim.keymap.set("n", "<leader>fb", function() Snacks.picker.buffers() end, {desc = "Buffers"})
 vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files() end, {desc = "Find Files"})
-vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, {desc = "Grep"})
+vim.keymap.set("n", "<leader>/", function() Snacks.picker.grep() end, {desc = "Grep"})
 vim.keymap.set("n", "<leader>fp", function() Snacks.picker.projects() end, {desc = "Projects"})
 vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end, {desc = "Recent"})
 vim.keymap.set("n", "<leader>sb", function() Snacks.picker.grep_buffers() end, {desc = "Grep Open Buffers"})
@@ -36,6 +36,9 @@ vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
+-- make j and k move by visual line when softwrapped
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
 --yank and paste from system clipboard
 vim.keymap.set('n', '<leader>p', '"+p')  -- paste after cursor
 vim.keymap.set('n', '<leader>P', '"+P')  -- paste before cursor
