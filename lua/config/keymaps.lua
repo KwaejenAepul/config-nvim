@@ -1,6 +1,6 @@
 vim.keymap.set("n", "-", "<cmd>Oil<CR>", {desc="Open Parent Directory in Oil"})
 vim.keymap.set('t', '<C-space>', '<C-\\><C-n><C-w>h',{silent = true}, { desc = 'Exit terminal mode' })
-
+vim.keymap.set("n", "<leader>ng", "<cmd>Neogit<CR>", {desc="Neogit"})
 -- todo keymaps
 vim.keymap.set("n","<leader>td", ":TodoQuickFix<CR>", {desc="Open todos quickfix list"})
 vim.keymap.set("n","<leader>tl", ":TodoLocList<CR>", {desc="Open todos location list"})
@@ -14,10 +14,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set("n", "<leader>fb", function() Snacks.picker.buffers() end, {desc = "Buffers"})
 vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files() end, {desc = "Find Files"})
 vim.keymap.set("n", "<leader>/", function() Snacks.picker.grep() end, {desc = "Grep"})
-vim.keymap.set("n", "<leader>fp", function() Snacks.picker.projects() end, {desc = "Projects"})
+vim.keymap.set("n", "<leader>pp", function() Snacks.picker.projects() end, {desc = "Projects"})
 vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end, {desc = "Recent"})
 vim.keymap.set("n", "<leader>sb", function() Snacks.picker.grep_buffers() end, {desc = "Grep Open Buffers"})
 vim.keymap.set("n", "<leader>sg", function() Snacks.picker.git_files() end, {desc = "git grep"})
+vim.keymap.set("n", "<leader>sd", function() Snacks.picker.diagnostics() end, {desc = "Diagnostics" })
 -- LSP
 vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, {desc = "Goto Definition"})
 vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, {desc = "Goto Declaration"})
