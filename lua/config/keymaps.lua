@@ -1,4 +1,5 @@
-vim.keymap.set("n", "-", "<cmd>Oil<CR>", {desc="Open Parent Directory in Oil"})
+vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", {desc="Open Parent Directory in Oil"})
+vim.keymap.set("n", "<leader>o-", "<cmd>Oil<CR>", {desc="Open Parent Directory in Oil"})
 vim.keymap.set('t', '<C-space>', '<C-\\><C-n><C-w>h',{silent = true}, { desc = 'Exit terminal mode' })
 vim.keymap.set("n", "<leader>ng", "<cmd>Neogit<CR>", {desc="Neogit"})
 -- todo keymaps
