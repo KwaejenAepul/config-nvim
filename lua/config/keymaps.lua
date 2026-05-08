@@ -19,8 +19,8 @@ vim.keymap.set("n", "<leader>pp", function() Snacks.picker.projects() end, {desc
 vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end, {desc = "Recent"})
 vim.keymap.set("n", "<leader>sb", function() Snacks.picker.grep_buffers() end, {desc = "Grep Open Buffers"})
 vim.keymap.set("n", "<leader>sg", function() Snacks.picker.git_files() end, {desc = "git grep"})
-vim.keymap.set("n", "<leader>sd", function() Snacks.picker.diagnostics() end, {desc = "Diagnostics" })
-vim.keymap.set("n", "gl", vim.diagnostic.open_float,{desc = "Open floating diagnostics window"} )
+vim.keymap.set("n", "<leader>fd", function() Snacks.picker.diagnostics() end, {desc = "Diagnostics" })
+vim.keymap.set("n", "sd", vim.diagnostic.open_float,{desc = "Open floating diagnostics window"} )
 -- LSP
 vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, {desc = "Goto Definition"})
 vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, {desc = "Goto Declaration"})
