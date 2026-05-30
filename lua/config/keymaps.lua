@@ -1,6 +1,6 @@
 vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", {desc="Open Parent Directory in Oil"})
 vim.keymap.set("n", "<leader>o-", "<cmd>Oil<CR>", {desc="Open Parent Directory in Oil"})
-vim.keymap.set('t', '<C-space>', '<C-\\><C-n><C-w>h',{silent = true}, { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<esc><esc>', '<C-\\><C-n><C-w>h',{silent = true}, { desc = 'Exit terminal mode' })
 vim.keymap.set("n", "<leader>ng", "<cmd>Neogit<CR>", {desc="Neogit"})
 -- todo keymaps
 vim.keymap.set("n","<leader>td", ":TodoQuickFix<CR>", {desc="Open todos quickfix list"})
@@ -20,13 +20,13 @@ vim.keymap.set("n", "<leader>fr", function() Snacks.picker.recent() end, {desc =
 vim.keymap.set("n", "<leader>sb", function() Snacks.picker.grep_buffers() end, {desc = "Grep Open Buffers"})
 vim.keymap.set("n", "<leader>sg", function() Snacks.picker.git_files() end, {desc = "git grep"})
 vim.keymap.set("n", "<leader>fd", function() Snacks.picker.diagnostics() end, {desc = "Diagnostics" })
-vim.keymap.set("n", "sd", vim.diagnostic.open_float,{desc = "Open floating diagnostics window"} )
 -- LSP
 vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, {desc = "Goto Definition"})
 vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, {desc = "Goto Declaration"})
 vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, {desc = "References"})
 vim.keymap.set("n", "gI", function() Snacks.picker.lsp_implementations() end, {desc = "Goto Implementation"})
 vim.keymap.set("n", "gy", function() Snacks.picker.lsp_type_definitions() end, {desc = "Goto T[y]pe Definition"})
+vim.keymap.set("n", "sd", vim.diagnostic.open_float,{desc = "Open floating diagnostics window"} )
 vim.keymap.set("n","<leader>cr", vim.lsp.buf.rename, {desc ='[R]e[n]ame'})
 --  other snack bindings
 vim.keymap.set("n", "<leader>sm", function() Snacks.picker.man() end, {desc = "man pages"})
