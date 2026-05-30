@@ -12,7 +12,13 @@ return {
             sync_install = true,
             highlight = { enable = true },
             indent = { enable = true },
-
+            init = function()
+                vim.api.nvim_create_autocmd('FileType',{
+                    callback = function()
+                    pcall(vim.treesitter.start)
+                end,
+                })
+            end,
             incremental_selection = {
                 enable = true,
                 keymaps = {
