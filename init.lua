@@ -1,9 +1,23 @@
 vim.loader.enable()
+
 --helper function for plugins hosted on github
 ---@param repo string
 ---@return string
 local function gh(repo) return 'https://github.com/' .. repo end
 
+vim.pack.add{gh 'nvim-lua/plenary.nvim',
+            gh 'nvim-tree/nvim-web-devicons',
+            gh 'sindrets/diffview.nvim',
+            gh 'folke/todo-comments.nvim',
+            gh 'tpope/vim-sleuth',
+            gh 'windwp/nvim-autopairs',
+            gh 'echasnovski/mini.statusline',
+            gh 'NeogitOrg/neogit',
+            gh 'stevearc/oil.nvim',
+            gh 'folke/snacks.nvim'}
+
+vim.pack.add { { src = gh 'saghen/blink.cmp', version = vim.version.range '1.*' } }
+vim.pack.add { { src = gh 'L3MON4D3/LuaSnip', version = vim.version.range '2.*' } }
 --colortheme
 vim.pack.add {gh 'folke/tokyonight.nvim'}
 vim.cmd[[colorscheme tokyonight-night]]
@@ -16,6 +30,36 @@ if gdproject then
 end
 
 vim.pack.add{gh 'hrsh7th/cmp-nvim-lsp'}
+vim.pack.add{'https://github.com/hrsh7th/nvim-cmp'}
+--autocomplete & snippits
+  require('luasnip').setup {}
+  -- [[ Autocomplete Engine ]]
+  require('blink.cmp').setup {
+    keymap = {
+     preset = 'default',
+     ["<Tab>"] = {"accept", "fallback"}
+    },
+
+    appearance = {
+      nerd_font_variant = 'mono',
+    },
+
+    completion = {
+      documentation = { auto_show = true, auto_show_delay_ms = 500 },
+    },
+
+    sources = {
+      default = { 'lsp', 'path', 'snippets', "buffer" },
+    },
+
+    snippets = { preset = 'luasnip' },
+
+    fuzzy = { implementation = 'lua' },
+
+    signature = { enabled = true },
+  }
+
+require('cmp').setup {enable = true}
 --LSP yoinked from kickstart.nvim 
 --  This function gets run when an LSP attaches to a particular buffer.
 --    That is to say, every time a new file is opened that is associated with
@@ -222,45 +266,6 @@ vim.api.nvim_create_autocmd('FileType', {
   end})
 
 
---autocomplete & snippits
- vim.pack.add { { src = gh 'L3MON4D3/LuaSnip', version = vim.version.range '2.*' } }
-  require('luasnip').setup {}
-  -- [[ Autocomplete Engine ]]
-  vim.pack.add { { src = gh 'saghen/blink.cmp', version = vim.version.range '1.*' } }
-  require('blink.cmp').setup {
-    keymap = {
-     preset = 'default',
-     ["<Tab>"] = {"accept", "fallback"}
-    },
-
-    appearance = {
-      nerd_font_variant = 'mono',
-    },
-
-    completion = {
-      documentation = { auto_show = true, auto_show_delay_ms = 500 },
-    },
-
-    sources = {
-      default = { 'lsp', 'path', 'snippets', "buffer" },
-    },
-
-    snippets = { preset = 'luasnip' },
-
-    fuzzy = { implementation = 'lua' },
-
-    signature = { enabled = true },
-  }
-vim.pack.add{gh 'nvim-lua/plenary.nvim'}
-vim.pack.add{gh 'nvim-tree/nvim-web-devicons'}
-vim.pack.add{gh 'sindrets/diffview.nvim'}
-vim.pack.add{gh 'folke/todo-comments.nvim'}
-vim.pack.add{gh 'tpope/vim-sleuth'}
-vim.pack.add{gh 'windwp/nvim-autopairs'}
-vim.pack.add{gh 'echasnovski/mini.statusline'}
-vim.pack.add{gh 'NeogitOrg/neogit'}
-vim.pack.add{gh 'stevearc/oil.nvim'}
-vim.pack.add{gh 'folke/snacks.nvim'}
 require('snacks').setup({
     image = {enable = true},
     picker = {},
