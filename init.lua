@@ -21,7 +21,7 @@ vim.pack.add { { src = gh 'L3MON4D3/LuaSnip', version = vim.version.range '2.*' 
 --colortheme
 vim.pack.add {gh 'folke/tokyonight.nvim'}
 vim.cmd[[colorscheme tokyonight-night]]
-
+require("mini.statusline").setup {}
 --Godot stuff
 local gdproject = io.open(vim.fn.getcwd()..'/project.godot', 'r')
 if gdproject then
