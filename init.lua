@@ -7,13 +7,16 @@ local function gh(repo) return 'https://github.com/' .. repo end
 --colortheme
 vim.pack.add {gh 'folke/tokyonight.nvim'}
 vim.cmd[[colorscheme tokyonight-night]]
+
+--Godot stuff
 local gdproject = io.open(vim.fn.getcwd()..'/project.godot', 'r')
 if gdproject then
     io.close(gdproject)
     vim.fn.serverstart './godothost'
 end
 
---LSP
+vim.pack.add{gh 'hrsh7th/cmp-nvim-lsp'}
+--LSP yoinked from kickstart.nvim 
 --  This function gets run when an LSP attaches to a particular buffer.
 --    That is to say, every time a new file is opened that is associated with
 --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -119,7 +122,8 @@ vim.pack.add {
   gh 'mason-org/mason-lspconfig.nvim',
   gh 'WhoIsSethDaniel/mason-tool-installer.nvim',
 }
-
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+vim.lsp.enable("gdscript",{capabilities={capabilities}})
 -- Automatically install LSPs and related tools to stdpath for Neovim
 require('mason').setup {}
 
@@ -376,3 +380,4 @@ vim.keymap.set('n', '<leader>p', '"+p')  -- paste after cursor
 vim.keymap.set('n', '<leader>P', '"+P')  -- paste before cursor
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y') -- yank motion
 vim.keymap.set({'n', 'v'}, '<leader>Y', '"+Y') -- yank line
+vim.keymap.set({'n'},'<leader>up', function() vim.pack.update(nil, {force=true}) end, {desc="update packages"})
