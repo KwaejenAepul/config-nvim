@@ -20,6 +20,13 @@ vim.pack.add { { src = gh 'saghen/blink.cmp', version = vim.version.range '1.*' 
 vim.pack.add { { src = gh 'L3MON4D3/LuaSnip', version = vim.version.range '2.*' } }
 --colortheme
 vim.pack.add {gh 'folke/tokyonight.nvim'}
+require("tokyonight").setup({
+  transparent = true,
+  styles = {
+    sidebars = "transparent",
+    floats = "transparent",
+  },
+})
 vim.cmd[[colorscheme tokyonight-night]]
 require("mini.statusline").setup {}
 --Godot stuff
@@ -116,6 +123,7 @@ local servers = {
    pyright = {},
    rust_analyzer = {},
    marksman = {},
+   ols = {},
   --
   -- Some languages (like typescript) have entire language plugins that can be useful:
   --    https://github.com/pmizio/typescript-tools.nvim
@@ -284,7 +292,7 @@ vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.shiftwidth = 4 -- Amount to indent with << and >>
 vim.opt.tabstop = 4 -- How many spaces are shown per Tab
 vim.opt.softtabstop = 4 -- How many spaces are applied when pressing Tab
-
+vim.opt.clipboard = "unnamedplus"
 vim.opt.smarttab = true
 vim.opt.smartindent = true
 vim.opt.autoindent = true -- Keep identation from previous line
